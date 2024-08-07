@@ -24,11 +24,21 @@ public class User implements Model {
     @CreationTimestamp
     private Date creationTime;
 
-    @ManyToMany(
-            // delay fetching users until they are actually needed
+    @OneToMany(
+            // propagate changes on customer entity to account entities
+            cascade = {CascadeType.ALL},
+
+            // make sure to remove accounts if unlinked from customer
+            orphanRemoval = true,
+
+            // user customer foreign key on account table to establish
+            // the many-to-one relationship instead of a join table
+            mappedBy = "group",
+
+            // fetch accounts from database together with user
             fetch = FetchType.EAGER
     )
-    private List<Group> ozGroups = new ArrayList<>();
+    private List<Group> groups = new ArrayList<>();
 
     @Override
     public Integer getId() {
@@ -69,7 +79,7 @@ public class User implements Model {
     }
 
     public void setGroups(List<Group> groups) {
-        this.ozGroups = groups;
+        this.groups = groups;
     }
 }
 

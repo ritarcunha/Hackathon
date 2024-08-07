@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "oz_group")
+@Table(name = "group")
 public class Group implements Model {
 
     @Id
@@ -24,16 +24,22 @@ public class Group implements Model {
         return name;
     }
 
-    @ManyToMany(
-            // mappedBy required for bidirectional association
-            mappedBy="ozGroups",
+    @OneToMany(
+            // propagate changes on group entity to user entity
+            cascade = {CascadeType.ALL},
 
-            // delay fetching users until they are actually needed
-            fetch = FetchType.LAZY
+            // make sure to remove users if unlinked from group
+            orphanRemoval = true,
+
+            // use user foreign key on user table to establish
+            // the many-to-one relationship instead of a join table
+            mappedBy = "user"
     )
     private List<User> users = new ArrayList<>();
 
-    @OneToOne()
+    @OneToOne(cascade = { CascadeType.ALL},
+            orphanRemoval = true,
+            mappedBy = "session")
     private Session session;
 
     public void setId(Integer id) {

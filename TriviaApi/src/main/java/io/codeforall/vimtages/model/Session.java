@@ -16,7 +16,7 @@ public class Session implements Model{
 
     @OneToOne(cascade = { CascadeType.ALL},
             orphanRemoval = true,
-            mappedBy = "session")
+            mappedBy = "group")
     private Group group;
 
     public boolean isSessionState() {

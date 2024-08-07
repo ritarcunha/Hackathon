@@ -1,9 +1,15 @@
 package io.codeforall.vimtages;
 
+import io.codeforall.vimtages.model.Category;
+import io.codeforall.vimtages.model.Facts;
+import io.codeforall.vimtages.persistence.dao.JpaFactDao;
+import io.codeforall.vimtages.services.FactServiceImplementation;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,10 +38,14 @@ public class Main {
         em.getTransaction().commit();
 
          */
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("oznightmanager");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("triviaapi");
         EntityManager em = emf.createEntityManager();
+        FactServiceImplementation factService = new FactServiceImplementation();
+        JpaFactDao jpaFactDao = new JpaFactDao();
+        jpaFactDao.setEm(em);
+        factService.setJpaFactDao(jpaFactDao);
+        List<Facts> factsList = factService.listAll();
 
-
-
+        factsList.forEach(facts -> System.out.println(facts.getFact()));
     }
 }
