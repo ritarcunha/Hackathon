@@ -18,6 +18,10 @@ public class Event implements Model{
 
     private Integer userId;
 
+    private Integer answerId;
+
+    private Integer questionId;
+
     @CreationTimestamp
     private Date creationTime;
 
@@ -29,6 +33,26 @@ public class Event implements Model{
     @Override
     public String getName() {
         return name;
+    }
+
+    public Integer getSessionId() {
+        return sessionId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public Integer getAnswerId() {
+        return answerId;
+    }
+
+    public Integer getQuestionId() {
+        return questionId;
+    }
+
+    public Date getCreationTime() {
+        return creationTime;
     }
 
     public void setId(Integer id) {
@@ -49,5 +73,13 @@ public class Event implements Model{
 
     public void setCreationTime(Date creationTime) {
         this.creationTime = creationTime;
+    }
+
+    public void setAnswerId(Integer answerId) {
+        this.answerId = answerId;
+    }
+
+    public void setQuestionId(Integer questionId) {
+        this.questionId = questionId;
     }
 }
