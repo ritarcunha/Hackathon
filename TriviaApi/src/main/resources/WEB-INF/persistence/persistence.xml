@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jee="http://www.springframework.org/schema/jee" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd" >
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"-->
+
+
+    <import resource="META-INF/persistence.xml"/>
+
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <beans>
+        <jee:jndi-lookup id="myEmf" jndi-name="persistence/myPersistenceUnit"/>
+    </beans>
+
+    <!--<bean id="transactionManager" class="">
+        <property name="entityManagerFactory" ref="emFactory" />
+    </bean>-->
+
+</beans>
