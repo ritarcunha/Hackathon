@@ -2,7 +2,6 @@ package io.codeforall.vimtages.model;
 
 import javax.persistence.*;
 import java.beans.EventSetDescriptor;
-import java.security.acl.Group;
 import java.util.List;
 
 @Entity
@@ -12,26 +11,16 @@ public class Session implements Model{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private boolean sessionState;
-    private List <Event> events;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String name;
+
+    @OneToOne(cascade = { CascadeType.ALL},
+            orphanRemoval = true,
+            mappedBy = "group")
+    private Group group;
 
     public boolean isSessionState() {
         return sessionState;
-    }
-
-    public void setSessionState(boolean sessionState) {
-        this.sessionState = sessionState;
-    }
-
-    public List<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;
     }
 
     @Override
@@ -39,10 +28,24 @@ public class Session implements Model{
         return this.id;
     }
 
-    @OneToOne(cascade = { CascadeType.ALL},
-            orphanRemoval = true,
-            mappedBy = "owner")
-    private Group group;
+    @Override
+    public String getName() {
+        return name;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public void setSessionState(boolean sessionState) {
+        this.sessionState = sessionState;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
+    }
 }
