@@ -17,6 +17,11 @@ public class Facts implements Model {
         return id;
     }
 
+    @Override
+    public String getName() {
+        return null;
+    }
+
     public String getFact() {
         return fact;
     }
