@@ -36,4 +36,25 @@ public class Group implements Model {
             mappedBy = "user"
     )
     private List<User> users = new ArrayList<>();
+
+    @OneToOne(cascade = { CascadeType.ALL},
+            orphanRemoval = true,
+            mappedBy = "session")
+    private Session session;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
 }
