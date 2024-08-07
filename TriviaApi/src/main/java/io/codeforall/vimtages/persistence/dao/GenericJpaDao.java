@@ -34,4 +34,6 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
     public T findById(Integer id){
         return em.find(modelType, id);
     }
+
+
 }
