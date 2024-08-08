@@ -35,5 +35,10 @@ public abstract class GenericJpaDao<T extends Model> implements Dao<T> {
         return em.find(modelType, id);
     }
 
+    @Override
+    public T saveOrUpdate(T modelObject) {
+        return em.merge(modelObject);
+    }
+
 
 }

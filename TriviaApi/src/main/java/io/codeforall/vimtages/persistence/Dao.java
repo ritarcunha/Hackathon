@@ -17,4 +17,6 @@ public interface Dao<T extends Model> {
      * @return the model
      */
     T findById(Integer id);
+
+    T saveOrUpdate(T modelObject);
 }
