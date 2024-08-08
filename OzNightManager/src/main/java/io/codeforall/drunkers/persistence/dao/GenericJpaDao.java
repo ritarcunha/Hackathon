@@ -2,6 +2,8 @@ package io.codeforall.drunkers.persistence.dao;
 
 import io.codeforall.drunkers.model.Model;
 import io.codeforall.drunkers.persistence.Dao;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaQuery;

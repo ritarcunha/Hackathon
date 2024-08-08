@@ -10,7 +10,7 @@ import javax.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
 
-        /*
+
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("oznightmanager");
         EntityManager em = emf.createEntityManager();
@@ -19,7 +19,7 @@ public class Main {
         jpaGroupDao.setEm(em);
 
         System.out.println(jpaGroupDao.findAll());
-*/
+
 
 
     }

@@ -1,4 +1,5 @@
 io/codeforall/drunkers/converters/GroupToGroupDto.class
+io/codeforall/drunkers/persistence/AnswerDao.class
 io/codeforall/drunkers/persistence/dao/GenericJpaDao.class
 io/codeforall/drunkers/services/QuestionService.class
 io/codeforall/drunkers/dtos/GroupDto.class
@@ -15,6 +16,7 @@ io/codeforall/drunkers/services/UserService.class
 io/codeforall/drunkers/persistence/dao/JpaGroupDao.class
 io/codeforall/drunkers/dtos/UserDto.class
 io/codeforall/drunkers/persistence/UserDao.class
+io/codeforall/drunkers/rest/RestAnswerController.class
 io/codeforall/drunkers/converters/UserToUserDto.class
 io/codeforall/drunkers/converters/GroupDtoToGroup.class
 io/codeforall/drunkers/persistence/SessionDao.class
@@ -24,12 +26,13 @@ io/codeforall/drunkers/services/QuestionServiceImpl.class
 io/codeforall/drunkers/model/Event.class
 io/codeforall/drunkers/persistence/dao/JpaSessionDao.class
 io/codeforall/drunkers/converters/UserDtoToUser.class
+io/codeforall/drunkers/services/AnswerServiceImpl.class
 io/codeforall/drunkers/services/LoginService.class
-io/codeforall/drunkers/rest/RestQuestionController.class
 io/codeforall/drunkers/persistence/Dao.class
+io/codeforall/drunkers/services/AnswerService.class
 io/codeforall/drunkers/services/RegisterService.class
-io/codeforall/drunkers/persistence/dao/JpaRegisterDao.class
 io/codeforall/drunkers/persistence/LoginDao.class
+io/codeforall/drunkers/persistence/dao/JpaRegisterDao.class
 io/codeforall/drunkers/services/RegisterServiceImpl.class
 io/codeforall/drunkers/services/GroupService.class
 io/codeforall/drunkers/persistence/GroupDao.class
@@ -42,3 +45,4 @@ io/codeforall/drunkers/converters/SessionToSessionDto.class
 io/codeforall/drunkers/model/User.class
 io/codeforall/drunkers/persistence/dao/JpaUserDao.class
 io/codeforall/drunkers/model/Model.class
+io/codeforall/drunkers/persistence/dao/JpaAnswerDao.class

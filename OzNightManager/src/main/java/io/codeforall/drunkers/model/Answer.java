@@ -4,7 +4,7 @@ import javax.persistence.*;
 
     @Entity
     @Table(name = "answer")
-    public class Answer {
+    public class Answer implements Model {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,11 +12,16 @@ import javax.persistence.*;
 
         private String message;
 
-        @ManyToOne
+        @ManyToOne (cascade = { CascadeType.PERSIST})
         private Question question;
 
         public Integer getId() {
             return id;
+        }
+
+        @Override
+        public String getName() {
+            return null;
         }
 
         public String getMessage() {
