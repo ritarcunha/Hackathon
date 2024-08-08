@@ -1,0 +1,10 @@
+INSERT INTO question(name)VALUES ("Have you had a glass of water recently? Staying hydrated is important!");
+INSERT INTO question(name) VALUES ("How are your energy levels right now? Feeling tired or still going strong?");
+INSERT INTO question(name) VALUES ("Are you feeling comfortable in the group, or do you need some space or quiet time?");
+INSERT INTO question(name) VALUES ("How are you feeling about your drink intake tonight? Would you like to slow down or switch to something non-alcoholic?");
+INSERT INTO question(name) VALUES ("Have you had something to eat recently? It might be a good idea to grab a bite.");
+INSERT INTO question(name) VALUES ("Do you have a plan to get home safely? Need help arranging a ride?");
+INSERT INTO question(name) VALUES ("How are you feeling emotionally? Everything going okay?");
+INSERT INTO question(name) VALUES ("Are you feeling well physically? Any dizziness, nausea, or other discomfort?");
+INSERT INTO question(name) VALUES ("Is anyone making you feel uncomfortable or pressured? Do you need assistance?");
+INSERT INTO question(name) VALUES ("Are you comfortable making decisions tonight? It's okay to take a moment if you're unsure.");
