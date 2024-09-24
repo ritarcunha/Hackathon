@@ -16,7 +16,7 @@ The app is inspired by Dorothy's journey in **The Wizard of Oz**, where, just li
 
 - **Night Adventure**: Just like Dorothy, users are encouraged to live their own "adventure" throughout the night, but with the reassurance that there is always someone available to help if needed.
 
-## Screenshot
+
 ![image](https://github.com/user-attachments/assets/abe21bc1-3105-4ed9-a178-41177b82c895)
 
 
